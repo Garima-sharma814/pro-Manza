@@ -1,9 +1,21 @@
 {
-  "dependencies": {
-    "concurrently": "^7.2.2"
-  },
+  "name": "pro-manza",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "type": "module",
   "scripts": {
+    "start": "node server/index.js",
     "dev": "cd server && npm run dev"
   },
-  "proxy": "http://localhost:3000"
+  "author": "Garima Sharma",
+  "dependencies": {
+    "concurrently": "^7.2.2",
+    "dotenv": "^16.0.3",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.8.0"
+  },
+  "proxy": "http://localhost:3000",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
