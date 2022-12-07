@@ -1,10 +1,12 @@
-import { initializeApp, cert } from 'firebase-admin/app';
+import mongoose from 'mongoose';
 
-const connectDB = (firebaseConfig) => {
-    initializeApp({
-        credential: cert(firebaseConfig),
-        databaseURL: 'https://fir-auth-9f4e0-default-rtdb.firebaseio.com'
-    })
-}
+const connectDB = () => {
+  mongoose.set('strictQuery', true);
+  mongoose.connect('mongodb://localhost:27017/proManzaDB', (err) => {
+    if (err) return console.log('DB connection error', err);
+    console.log('DB connected');
+  });
+};
 
-export { connectDB };
+export { connectDB as default };
+
